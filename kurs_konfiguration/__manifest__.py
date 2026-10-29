@@ -1,7 +1,7 @@
 {
     "name": "Kurs: Konfiguration in Odoo",
     "summary": "Beispielmodul zum eLearning-Kurs: odoo.conf, Systemparameter, Einstellungen, Daten und Migrationen",
-    "version": "19.0.1.1.0",
+    "version": "18.0.1.1.0",
     "category": "Hidden",
     "author": "Detalex GmbH",
     "website": "https://detalex.de",

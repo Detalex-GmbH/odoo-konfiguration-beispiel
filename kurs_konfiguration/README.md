@@ -1,4 +1,4 @@
-# kurs_konfiguration (Odoo 19.0)
+# kurs_konfiguration (Odoo 18.0)
 
 Lernmodul zum Kurs [Konfiguration in Odoo](https://detalex.de/slides/konfiguration-in-odoo-von-odoo-conf-bis-zum-migrationsskript-4). Es hat keine fachliche Funktion.
 
@@ -12,7 +12,7 @@ kurs_konfiguration/
 │   ├── ir_config_parameter_data.xml  Startwerte der Systemparameter (noupdate="1")
 │   └── kurs_kategorie_data.xml       ein Datensatz noupdate="0", einer noupdate="1"
 ├── demo/kurs_kategorie_demo.xml      nur in Datenbanken mit Demodaten
-├── migrations/19.0.1.1.0/post-migrate.py   läuft beim Update von einer älteren Version
+├── migrations/18.0.1.1.0/post-migrate.py   läuft beim Update von einer älteren Version
 ├── models/
 │   ├── kurs_kategorie.py             einfaches Modell für die Datenbeispiele
 │   ├── res_company.py                Firmenfelder mit Prüfung (@api.constrains)
@@ -23,10 +23,10 @@ kurs_konfiguration/
 
 ## Versuch: noupdate und Migration
 
-1. Im Manifest die Version auf `19.0.1.0.0` setzen und das Modul installieren.
+1. Im Manifest die Version auf `18.0.1.0.0` setzen und das Modul installieren.
 2. In **Kurs-Konfiguration › Kategorien** die Datensätze „Standard“ und „Anpassbar“ umbenennen.
-3. Version wieder auf `19.0.1.1.0` setzen und das Modul mit `-u kurs_konfiguration` aktualisieren.
-4. Ergebnis: „Standard“ hat wieder seinen Namen aus der XML-Datei, „Anpassbar“ behält deinen Namen, und die Migration hat die Kategorie „Aus Migration 19.0.1.1.0“ sowie den Systemparameter `kurs_konfiguration.migriert_von` angelegt.
+3. Version wieder auf `18.0.1.1.0` setzen und das Modul mit `-u kurs_konfiguration` aktualisieren.
+4. Ergebnis: „Standard“ hat wieder seinen Namen aus der XML-Datei, „Anpassbar“ behält deinen Namen, und die Migration hat die Kategorie „Aus Migration 18.0.1.1.0“ sowie den Systemparameter `kurs_konfiguration.migriert_von` angelegt.
 
 Bei einer Neuinstallation laufen keine Migrationsskripte; dafür ist der `post_init_hook` da.
 

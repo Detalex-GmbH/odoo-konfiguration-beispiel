@@ -1,4 +1,4 @@
-"""Läuft einmal, wenn eine Datenbank von einer Version unter 19.0.1.1.0 aktualisiert wird."""
+"""Läuft einmal, wenn eine Datenbank von einer Version unter 18.0.1.1.0 aktualisiert wird."""
 
 
 def migrate(cr, version):
@@ -15,7 +15,7 @@ def migrate(cr, version):
     cr.execute(
         """
         INSERT INTO kurs_kategorie (name, sequence, herkunft, beschreibung, create_uid, write_uid, create_date, write_date)
-        VALUES ('{"en_US": "Aus Migration 19.0.1.1.0"}', 30, 'migration',
-                'Angelegt vom Skript migrations/19.0.1.1.0/post-migrate.py', 1, 1, now(), now())
+        VALUES ('{"en_US": "Aus Migration 18.0.1.1.0"}', 30, 'migration',
+                'Angelegt vom Skript migrations/18.0.1.1.0/post-migrate.py', 1, 1, now(), now())
         """
     )
