@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- noupdate="0" (Standard): jedes Modul-Update setzt diese Werte zurück -->
+    <record id="kategorie_standard" model="kurs.kategorie">
+        <field name="name">Standard (vom Modul gepflegt)</field>
+        <field name="sequence">1</field>
+        <field name="herkunft">data_update</field>
+        <field name="beschreibung">Ändern Sie den Namen und aktualisieren Sie das Modul: Der Name kommt zurück.</field>
+    </record>
+
+    <data noupdate="1">
+        <!-- noupdate="1": nur bei der Installation, danach darf der Kunde ändern -->
+        <record id="kategorie_anpassbar" model="kurs.kategorie">
+            <field name="name">Anpassbar (Startwert)</field>
+            <field name="sequence">2</field>
+            <field name="herkunft">data_noupdate</field>
+            <field name="beschreibung">Ändern Sie den Namen und aktualisieren Sie das Modul: Ihre Änderung bleibt.</field>
+        </record>
+    </data>
+</odoo>

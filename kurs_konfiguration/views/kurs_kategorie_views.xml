@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="kurs_kategorie_view_list" model="ir.ui.view">
+        <field name="name">kurs.kategorie.list</field>
+        <field name="model">kurs.kategorie</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="herkunft"/>
+                <field name="beschreibung"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="kurs_kategorie_action" model="ir.actions.act_window">
+        <field name="name">Kurs-Kategorien</field>
+        <field name="res_model">kurs.kategorie</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="kurs_settings_action" model="ir.actions.act_window">
+        <field name="name">Einstellungen</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'module': 'kurs_konfiguration', 'bin_size': False}</field>
+    </record>
+
+    <record id="kurs_parameter_action" model="ir.actions.act_window">
+        <field name="name">Systemparameter (Kurs)</field>
+        <field name="res_model">ir.config_parameter</field>
+        <field name="view_mode">list</field>
+        <field name="domain">[('key', '=like', 'kurs_konfiguration.%')]</field>
+    </record>
+
+    <menuitem id="kurs_menu_root" name="Kurs-Konfiguration" sequence="90"
+              web_icon="base,static/description/settings.png"/>
+    <menuitem id="kurs_menu_kategorie" name="Kategorien" parent="kurs_menu_root"
+              action="kurs_kategorie_action" sequence="10"/>
+    <menuitem id="kurs_menu_parameter" name="Systemparameter" parent="kurs_menu_root"
+              action="kurs_parameter_action" sequence="15"
+              groups="group_kurs_teilnehmer,base.group_system"/>
+    <menuitem id="kurs_menu_settings" name="Einstellungen" parent="kurs_menu_root"
+              action="kurs_settings_action" sequence="20" groups="base.group_system"/>
+</odoo>

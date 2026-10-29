@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Nur in Datenbanken mit Demodaten (ab 19.0 nur mit der Startoption with-demo) -->
+    <record id="kategorie_demo_schulung" model="kurs.kategorie">
+        <field name="name">Demo: Schulung</field>
+        <field name="sequence">20</field>
+        <field name="herkunft">demo</field>
+    </record>
+    <record id="kategorie_demo_workshop" model="kurs.kategorie">
+        <field name="name">Demo: Workshop</field>
+        <field name="sequence">21</field>
+        <field name="herkunft">demo</field>
+    </record>
+</odoo>

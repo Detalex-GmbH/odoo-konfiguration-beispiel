@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.kurs_konfiguration</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Kurs-Konfiguration" name="kurs_konfiguration">
+                    <block title="Instanz (odoo.conf, nur lesen)" name="kurs_instanz">
+                        <setting string="workers" help="Gilt für alle Datenbanken dieses Servers.">
+                            <field name="kurs_conf_workers"/>
+                        </setting>
+                        <setting string="Eigener Schlüssel" help="Eigene Optionen in odoo.conf liest man mit odoo.tools.config.get().">
+                            <field name="kurs_conf_eigener_schluessel"/>
+                        </setting>
+                    </block>
+                    <block title="Datenbank (Systemparameter)" name="kurs_datenbank">
+                        <setting string="API-Adresse" help="Gespeichert als kurs_konfiguration.api_url, gilt für alle Firmen.">
+                            <field name="kurs_api_url"/>
+                        </setting>
+                        <setting string="Maximale Versuche" help="1 bis 10, sonst Fehlermeldung beim Speichern.">
+                            <field name="kurs_max_versuche"/>
+                        </setting>
+                    </block>
+                    <block title="Firma (res.company)" name="kurs_firma">
+                        <setting string="Angebote gültig (Tage)" company_dependent="1" help="Je Firma eigener Wert.">
+                            <field name="kurs_angebot_gueltig_tage"/>
+                        </setting>
+                        <setting string="Hinweis im Belegfuß" company_dependent="1">
+                            <field name="kurs_hinweistext"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

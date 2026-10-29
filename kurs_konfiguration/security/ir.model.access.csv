@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kurs_kategorie_user,kurs.kategorie user,model_kurs_kategorie,base.group_user,1,0,0,0
+access_kurs_kategorie_system,kurs.kategorie system,model_kurs_kategorie,base.group_system,1,1,1,1
+access_config_parameter_kurs_teilnehmer,ir.config_parameter kurs teilnehmer,base.model_ir_config_parameter,group_kurs_teilnehmer,1,0,0,0

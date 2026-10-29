@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_kurs_teilnehmer" model="res.groups">
+        <field name="name">Kurs-Konfiguration: Teilnehmer (nur lesen)</field>
+    </record>
+
+    <!-- Teilnehmer sehen nur die Systemparameter dieses Moduls -->
+    <record id="rule_config_parameter_kurs" model="ir.rule">
+        <field name="name">Kurs-Teilnehmer: nur kurs_konfiguration.*</field>
+        <field name="model_id" ref="base.model_ir_config_parameter"/>
+        <field name="domain_force">[('key', '=like', 'kurs_konfiguration.%')]</field>
+        <field name="groups" eval="[(4, ref('group_kurs_teilnehmer'))]"/>
+    </record>
+</odoo>

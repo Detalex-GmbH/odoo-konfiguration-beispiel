@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Startwerte: einmal bei der Installation, danach gehören sie dem Kunden -->
+    <record id="param_api_url" model="ir.config_parameter">
+        <field name="key">kurs_konfiguration.api_url</field>
+        <field name="value">https://api.example.com</field>
+    </record>
+    <record id="param_max_versuche" model="ir.config_parameter">
+        <field name="key">kurs_konfiguration.max_versuche</field>
+        <field name="value">3</field>
+    </record>
+</odoo>
