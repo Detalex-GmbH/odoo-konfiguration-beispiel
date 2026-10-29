@@ -10,7 +10,7 @@ Das Modul [`kurs_konfiguration/`](kurs_konfiguration/) zeigt an einem kleinen, l
 | Datenbank | alle Firmen einer Datenbank | Systemparameter (`ir.config_parameter`) | Felder mit `config_parameter=`, Startwerte in `data/ir_config_parameter_data.xml` |
 | Firma | eine Firma | Feld an `res.company` | `related="company_id.…", readonly=False` in den Einstellungen |
 | Startdaten | einmalig oder bei jedem Update | `data` / `demo` im Manifest | `data/kurs_kategorie_data.xml` (noupdate 0 und 1), `demo/kurs_kategorie_demo.xml` |
-| Versionswechsel | einmal je Update auf eine neue Version | `migrations/<version>/` | `migrations/19.0.1.1.0/post-migrate.py`, dazu `post_init_hook` in `__init__.py` |
+| Versionswechsel | einmal je Update auf eine neue Version | `migrations/<version>/` | `migrations/20.0.1.1.0/post-migrate.py`, dazu `post_init_hook` in `__init__.py` |
 
 ## Branches
 
@@ -20,12 +20,12 @@ Das Modul [`kurs_konfiguration/`](kurs_konfiguration/) zeigt an einem kleinen, l
 | `19.0` | 19.0 | Einstellungs-Aktion ohne `target`; Demodaten nur mit `--with-demo` |
 | `20.0` | 20.0 | Systemparameter typisiert (`get_str`, `get_bool`, `get_int`, `get_float`, `set_*`); Rechte in `security/ir.access.csv` mit Domain statt `ir.model.access.csv` und `ir.rule` |
 
-Du bist auf Branch **`19.0`**.
+Du bist auf Branch **`20.0`**.
 
 ## Ausprobieren
 
 ```bash
-git clone -b 19.0 https://github.com/Detalex-GmbH/odoo-konfiguration-beispiel.git
+git clone -b 20.0 https://github.com/Detalex-GmbH/odoo-konfiguration-beispiel.git
 odoo-bin -c odoo.conf --addons-path=<deine Pfade>,./odoo-konfiguration-beispiel -d kurs_test -i kurs_konfiguration --with-demo
 ```
 
@@ -33,11 +33,11 @@ Danach im Menü **Kurs-Konfiguration**: Kategorien, Systemparameter und Einstell
 
 ## Offizielle Dokumentation
 
-- Kommandozeile und Konfigurationsdatei: https://www.odoo.com/documentation/19.0/developer/reference/cli.html#reference-cmdline-config-file
-- Datendateien (record, noupdate, function): https://www.odoo.com/documentation/19.0/developer/reference/backend/data.html
-- Manifest (data, demo, Hooks): https://www.odoo.com/documentation/19.0/developer/reference/backend/module.html
-- Upgrade-Skripte: https://www.odoo.com/documentation/19.0/developer/reference/upgrades/upgrade_scripts.html
-- Mehrere Firmen: https://www.odoo.com/documentation/19.0/developer/howtos/company.html
+- Kommandozeile und Konfigurationsdatei: https://www.odoo.com/documentation/20.0/developer/reference/cli.html#reference-cmdline-config-file
+- Datendateien (record, noupdate, function): https://www.odoo.com/documentation/20.0/developer/reference/backend/data.html
+- Manifest (data, demo, Hooks): https://www.odoo.com/documentation/20.0/developer/reference/backend/module.html
+- Upgrade-Skripte: https://www.odoo.com/documentation/20.0/developer/reference/upgrades/upgrade_scripts.html
+- Mehrere Firmen: https://www.odoo.com/documentation/20.0/developer/howtos/company.html
 
 ## Lizenz
 
